@@ -15,9 +15,8 @@ public class CreateNewFileDemo {
         }else{
             // 創建指定文件
             file.createNewFile();
-            System.out.println("");
+            System.out.println("File create successfully !");
         }
-
 
     }
 }
