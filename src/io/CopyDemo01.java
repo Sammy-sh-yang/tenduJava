@@ -5,6 +5,11 @@ import java.io.*;
 public class CopyDemo01 {
     public static void main(String[] args) throws IOException {
 
+
+        // 缺點是這個 io 方法速度慢, 爲什麼? 因爲他是在硬盤中運算, 單字節讀取
+        // 電磁訊號轉換 (電內存中)(磁硬盤中)
+        //
+
         long start = System.currentTimeMillis();
 
         File pic = new File("./txt/demo/02.png");
