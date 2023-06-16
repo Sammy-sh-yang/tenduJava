@@ -17,16 +17,16 @@ public class CopyDemo03 {
         FileOutputStream fos = new FileOutputStream(outPic);
 
         //塊讀有一個極限 optimize reading is 8~10kb
-        byte[] data = new byte[10*1024];
+        byte[] data = new byte[10 * 1024];
 
         int len;
-        while ((len = fis.read(data)) != -1){
-            fos.write(data,0,len);
+        while ((len = fis.read(data)) != -1) {
+            fos.write(data, 0, len);
         }
 
         long end = System.currentTimeMillis();
         //Run time: 13ms VERY FAST!
-        System.out.println("Run Time: " +( end - start));
+        System.out.println("Run Time: " + (end - start));
 
         fos.close();
         fis.close();
