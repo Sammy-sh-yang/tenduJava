@@ -11,7 +11,7 @@ public class TestNoteWriterDemo {
 
         Scanner ss = new Scanner(System.in);
         FileOutputStream fos = new FileOutputStream("./txt/noteWriter.txt", true);
-        PrintWriter pw = new PrintWriter(fos,true );
+        PrintWriter pw = new PrintWriter(fos, true);
 
         System.out.println("Write anything! (Press \"1\" to exit)");
 
