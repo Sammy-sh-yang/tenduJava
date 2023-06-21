@@ -17,7 +17,7 @@ public class TestNote01 {
 
         System.out.println("Write your text: (Enter \"exit\" to exit)");
         while (true) {
-            String line = sc.nextLine();
+            String line = sc.next();
             if ("exit".equalsIgnoreCase(line)) {
                 break;
             }
