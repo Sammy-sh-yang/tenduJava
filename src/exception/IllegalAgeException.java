@@ -3,7 +3,6 @@ package exception;
 
 public class IllegalAgeException extends Exception{
     //拋出的異常類型要用合適的名字
-
     public IllegalAgeException() {
     }
 
