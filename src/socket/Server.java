@@ -25,14 +25,9 @@ public class Server {
                 Socket socket = server.accept();
                 System.out.println("Client connected");
 
-                InputStream in = socket.getInputStream();
-                InputStreamReader isr = new InputStreamReader(in, StandardCharsets.UTF_8);
-                BufferedReader br = new BufferedReader(isr);
-
-                String line;
-                while ((line = br.readLine()) != null) {
-                    System.out.println(line);
-                }
+                ClientHandler handler = new ClientHandler(socket);
+                Thread t1 = new Thread(handler);
+                t1.start();
 
             }
         } catch (IOException e) {
@@ -46,5 +41,26 @@ public class Server {
         server.start();
     }
 
+    private static class ClientHandler implements Runnable {
+        private Socket socket;
+        public ClientHandler(Socket socket) {
+            this.socket = socket;
+        }
+        @Override
+        public void run() {
+            try {
+                InputStream in = socket.getInputStream();
+                InputStreamReader isr = new InputStreamReader(in, StandardCharsets.UTF_8);
+                BufferedReader br = new BufferedReader(isr);
+
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

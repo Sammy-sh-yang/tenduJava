@@ -12,8 +12,6 @@ public class ThreadDemo03 {
             }
         };
 
-
-
         Runnable r1 = new Runnable() {
             @Override
             public void run() {
