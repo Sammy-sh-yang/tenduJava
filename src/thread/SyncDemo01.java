@@ -30,14 +30,20 @@ public class SyncDemo01 {
     }
 }
 
-class Table {
-
+class Table{
     private int bean = 20; //桌上有20豆子
 
-    public int getBean() {
+    //synchronized 不知道誰先誰後，同步
+
+    // joined 是提前排好的順序，異步
+
+    public synchronized int getBean() {
         if (bean <= 0) {
             throw new RuntimeException("There's no Beans");
         }
-        return bean--;
+
+        Thread.yield(); //這方法，可以主動讓出時間片（禮讓線程）
+        bean--;
+        return bean;
     }
 }
