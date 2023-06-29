@@ -13,11 +13,12 @@ public class Client {
     private Socket socket;
 
     //Client name
-    private static String username;
+    private static String bot;
 
     //初始化客戶端
     public Client() {
         System.out.println("Connecting port 8088 server");
+        System.out.println("You can start chatting: ");
 
         // 如果報錯表示 port 沒被佔用
         try {
@@ -42,7 +43,7 @@ public class Client {
                 if ("exit".equals(line)) {
                     break;
                 }
-                pw.println(username + ": " + line);
+                pw.println(bot + ": " + line);
             }
 
         } catch (IOException e) {
@@ -57,17 +58,19 @@ public class Client {
 
     }
 
-    //沒有邏輯，控制流程
-    public static void main(String[] args) {
-
+    // Random ChatBot
+    public void bot(){
         String[] name = new String[]{"Sammy", "Prisca", "Peter", "Halo"};
         Random ran = new Random();
         int num = ran.nextInt(name.length);
+        bot = name[num];
+    }
 
-        //random username
-        username = name[num];
+    //沒有邏輯，控制流程
+    public static void main(String[] args) {
 
         Client client = new Client();
+        client.bot();
         client.start();
     }
 }
