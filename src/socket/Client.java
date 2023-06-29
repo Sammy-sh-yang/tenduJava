@@ -60,7 +60,7 @@ public class Client {
 
     // Random ChatBot
     public void bot(){
-        String[] name = new String[]{"Sammy", "Prisca", "Peter", "Halo"};
+        String[] name = {"Sammy", "Prisca", "Peter", "Halo"};
         Random ran = new Random();
         int num = ran.nextInt(name.length);
         bot = name[num];
