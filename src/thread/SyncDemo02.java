@@ -1,6 +1,7 @@
 package thread;
 
 
+//同步
 public class SyncDemo02 {
     public static void main(String[] args) {
         Shop s = new Shop();
