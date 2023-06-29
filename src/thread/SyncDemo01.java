@@ -8,7 +8,7 @@ public class SyncDemo01 {
         Thread t1 = new Thread("Prisca") {
             @Override
             public void run() {
-                while (true){
+                while (true) {
                     int i = table.getBean();
                     System.out.println(getName() + ":" + i);
                 }
@@ -17,7 +17,7 @@ public class SyncDemo01 {
         Thread t2 = new Thread("Sammy") {
             @Override
             public void run() {
-                while (true){
+                while (true) {
                     int i = table.getBean();
                     System.out.println(getName() + ":" + i);
                 }
