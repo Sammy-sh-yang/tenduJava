@@ -14,6 +14,7 @@ public class SyncDemo01 {
                 }
             }
         };
+
         Thread t2 = new Thread("Sammy") {
             @Override
             public void run() {
