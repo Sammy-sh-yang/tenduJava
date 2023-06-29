@@ -3,6 +3,7 @@ package socket;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Client {
@@ -13,7 +14,6 @@ public class Client {
 
     //Client name
     private static String username;
-
 
     //初始化客戶端
     public Client() {
@@ -42,7 +42,7 @@ public class Client {
                 if ("exit".equals(line)) {
                     break;
                 }
-                pw.println(username +": " + line);
+                pw.println(username + ": " + line);
             }
 
         } catch (IOException e) {
@@ -60,11 +60,12 @@ public class Client {
     //沒有邏輯，控制流程
     public static void main(String[] args) {
 
-        // Task: random username
-        System.out.println("Enter your username: ");
-        Scanner scanner = new Scanner(System.in);
-        username = scanner.nextLine();
+        String[] name = new String[]{"Sammy", "Prisca", "Peter", "Halo"};
+        Random ran = new Random();
+        int num = ran.nextInt(name.length);
 
+        //random username
+        username = name[num];
 
         Client client = new Client();
         client.start();
